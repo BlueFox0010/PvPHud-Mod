@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "pvp-hud",
+  "version": "${version}",
+  "name": "PvP-Hud",
+  "description": "Put more hud in your minecraft!",
+  "authors": [
+    "BlueFox"
+  ],
+  "contact": {
+    "repo": "https://github.com/BlueFox0010/PvPHud-Mod"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pvp-hud/icon.png",
+  "environment": "client",
+  "entrypoints": {
+      "main": [
+        "me.bluefox.pvphud.PvPHud"
+      ],
+      "modmenu": [
+        "me.bluefox.pvphud.config.ModMenuIntegration"
+      ],
+      "client": [
+        "me.bluefox.pvphud.PvPHudClient"
+      ]
+  },
+  "mixins": [
+    "pvp-hud.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.10",
+    "fabric": "*",
+    "java": ">=17",
+    "modmenu": "*",
+    "yet_another_config_lib_v3": "*",
+    "fabric-api": "*",
+    "minecraft": "1.20.4"
+  }
+}

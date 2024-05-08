@@ -1,0 +1,28 @@
+{
+  "key.category.pvphud":  "PvPHud Mod Keys",
+  "key.pvphud.open_config":  "Open Config",
+  "key.pvphud.toggle_sprint":  "Toggle Sprint",
+
+  
+  "config.title": "PvPHud Config",
+
+  "config.category.fpsDisplay.title": "FPS Hud",
+  "config.option.fpsDisplay.enableHud": "Enable Hud",
+  "config.option.fpsDisplay.textShadow": "Text Shadow",
+  "config.option.fpsDisplay.hudScale": "Scale",
+
+  "config.category.pingDisplay.title": "Ping Hud",
+  "config.option.pingDisplay.enableHud": "Enable Hud",
+  "config.option.pingDisplay.textShadow": "Text Shadow",
+  "config.option.pingDisplay.hudScale": "Scale",
+
+  "config.category.reachDisplay.title": "Reach Hud",
+  "config.option.reachDisplay.enableHud": "Enable Hud",
+  "config.option.reachDisplay.textShadow": "Text Shadow",
+  "config.option.reachDisplay.hudScale": "Scale",
+
+  "config.category.toggleSprintDisplay.title": "Toggle Sprint Hud",
+  "config.option.toggleSprintDisplay.enableHud": "Enable Hud",
+  "config.option.toggleSprintDisplay.textShadow": "Text Shadow",
+  "config.option.toggleSprintDisplay.hudScale": "Scale"
+}
