@@ -21,7 +21,7 @@ public class PvPHudConfig {
     public static Screen createGui(Screen parent) {
         return YetAnotherConfigLib.createBuilder()
                 .title(Text.translatable("config.title"))
-
+                //Testings
                 //FPS hud
                 .category(ConfigCategory.createBuilder()
                         .name(Text.of("PvPHud Config"))
