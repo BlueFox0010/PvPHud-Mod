@@ -6,50 +6,47 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.fabricmc.loader.api.FabricLoader;
 
-import java.io.*;
-import java.nio.file.Path;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 
 public class ConfigHandler {
-    private static File configFile;
-    private static Path configPath = Path.of(FabricLoader.getInstance().getConfigDir() + "\\PvPHudConfig.json");
+    private String configFilePath = FabricLoader.getInstance().getConfigDir().toString() + "\\pvphud.json";
     public void createConfig() {
-        FileWriter writer = null;
-        JsonObject mainJson = new JsonObject();
-        JsonArray jsonArray = new JsonArray();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonObject mainJson = new JsonObject();
 
-        jsonArray.add(fpsJson());
+        mainJson.add("fpsHud", fpsHud());
+        mainJson.add("pingHud", pingHud());
 
-        mainJson.add("fpsHud", jsonArray);
+        if (!new File(configFilePath).exists()) {
+            try (Writer writer = new FileWriter(configFilePath)) {
+                writer.write(gson.toJson(mainJson));
 
-        configFile = new File(String.valueOf(configPath));
-
-        String json = gson.toJson(mainJson);
-        if (!configFile.exists()) {
-            try {
-                writer = new FileWriter(configPath.toString());
-                writer.write(json);
-            } catch (IOException e) {
+                writer.close();
+            }
+            catch (IOException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    writer.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         }
+
     }
 
-    private boolean fpsEnableHud = false;
-    private boolean fpsTextShadow = false;
-    private float fpsScale = 1;
-    private JsonObject fpsJson() {
+    public JsonObject fpsHud() {
         JsonObject fpsJson = new JsonObject();
+        fpsJson.addProperty("EnableHud", false);
+        fpsJson.addProperty("TextShadow", false);
+        fpsJson.addProperty("Scale", 1.0);
 
-        fpsJson.addProperty("fpsEnableHud", fpsEnableHud);
-        fpsJson.addProperty("fpsTextShadow", fpsTextShadow);
-        fpsJson.addProperty("fpsScale", fpsScale);
+        return fpsJson;
+    }
+
+    public JsonObject pingHud() {
+        JsonObject fpsJson = new JsonObject();
+        fpsJson.addProperty("EnableHud", false);
+        fpsJson.addProperty("TextShadow", false);
+        fpsJson.addProperty("Scale", 1.0);
 
         return fpsJson;
     }

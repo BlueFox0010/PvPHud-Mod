@@ -23,9 +23,9 @@ darkMojangStudiosBackground:false
 hideLightningFlashes:false
 hideSplashTexts:false
 mouseSensitivity:0.2617703456398377
-fov:0.0
+fov:0.5
 screenEffectScale:0.0
-fovEffectScale:0.20116932389471232
+fovEffectScale:0.5490677389625
 darknessEffectScale:1.0
 glintSpeed:0.5
 glintStrength:0.5056746839016126
@@ -70,7 +70,7 @@ useNativeTransport:true
 mainHand:"right"
 attackIndicator:1
 narrator:0
-tutorialStep:movement
+tutorialStep:none
 mouseWheelSensitivity:1.0
 rawMouseInput:true
 glDebugVerbosity:1
@@ -124,7 +124,7 @@ key_key.modmenu.open_menu:key.keyboard.unknown
 key_key.pvphud.open_config:key.keyboard.right.shift
 key_key.pvphud.toggle_sprint:key.keyboard.i
 soundCategory_master:1.0
-soundCategory_music:1.0
+soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0

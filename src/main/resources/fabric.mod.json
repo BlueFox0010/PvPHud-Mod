@@ -17,11 +17,11 @@
       "main": [
         "me.bluefox.pvphud.PvPHud"
       ],
-      "modmenu": [
-        "me.bluefox.pvphud.config.ModMenuIntegration"
-      ],
       "client": [
         "me.bluefox.pvphud.PvPHudClient"
+      ],
+      "modmenu": [
+        "me.bluefox.pvphud.config.ModMenuIntegration"
       ]
   },
   "mixins": [

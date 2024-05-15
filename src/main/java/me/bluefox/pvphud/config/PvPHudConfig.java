@@ -10,10 +10,9 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 
 public class PvPHudConfig {
-    private ConfigHandler configHandler = new ConfigHandler();
     public static boolean fpsEnableHud = false;
     public static boolean fpsTextShadow = false;
-    public static float fpsScale = 1;
+    public static float fpsScale = 1F;
 
     public static boolean pingEnableHud = false;
     public static boolean pingTextShadow = false;
@@ -21,16 +20,15 @@ public class PvPHudConfig {
     public static Screen createGui(Screen parent) {
         return YetAnotherConfigLib.createBuilder()
                 .title(Text.translatable("config.title"))
-                //Testings
-                //FPS hud
                 .category(ConfigCategory.createBuilder()
                         .name(Text.of("PvPHud Config"))
+                        //FPS hud
                         .group(OptionGroup.createBuilder()
                                 .name(Text.translatable("config.category.fpsDisplay.title"))
                                 .option(Option.createBuilder(Boolean.class)
                                         .name(Text.translatable("config.option.fpsDisplay.enableHud"))
                                         .binding(
-                                                fpsEnableHud,
+                                                false,
                                                 () -> fpsEnableHud,
                                                 newValue -> fpsEnableHud = newValue
                                         )
@@ -39,7 +37,7 @@ public class PvPHudConfig {
                                 .option(Option.createBuilder(Boolean.class)
                                         .name(Text.translatable("config.option.fpsDisplay.textShadow"))
                                         .binding(
-                                                fpsTextShadow,
+                                                false,
                                                 () -> fpsTextShadow,
                                                 newValue -> fpsTextShadow = newValue
                                         )
@@ -48,7 +46,7 @@ public class PvPHudConfig {
                                 .option(Option.createBuilder(Float.class)
                                         .name(Text.translatable("config.option.fpsDisplay.hudScale"))
                                         .binding(
-                                                fpsScale,
+                                                1F,
                                                 () -> fpsScale,
                                                 newValue -> fpsScale = newValue
                                         )
@@ -58,12 +56,14 @@ public class PvPHudConfig {
                                         )
                                         .build())
                                 .build())
+
+                        //Ping Hud
                         .group(OptionGroup.createBuilder()
                                 .name(Text.translatable("config.category.pingDisplay.title"))
                                 .option(Option.createBuilder(Boolean.class)
                                         .name(Text.translatable("config.option.pingDisplay.enableHud"))
                                         .binding(
-                                                pingEnableHud,
+                                                false,
                                                 () -> pingEnableHud,
                                                 newValue -> pingEnableHud = newValue
                                         )
@@ -72,7 +72,7 @@ public class PvPHudConfig {
                                 .option(Option.createBuilder(Boolean.class)
                                         .name(Text.translatable("config.option.pingDisplay.textShadow"))
                                         .binding(
-                                                pingTextShadow,
+                                                false,
                                                 () -> pingTextShadow,
                                                 newValue -> pingTextShadow = newValue
                                         )

@@ -14,7 +14,6 @@ public class PvPHud implements ModInitializer {
         LOGGER.info("PvP Hud is now starting!");
 
         ConfigHandler configHandler = new ConfigHandler();
-
         configHandler.createConfig();
     }
 }
